@@ -1,0 +1,51 @@
+body.sqs-edit-mode-active.has-footer-parallax,
+body.sqs-edit-mode-active.footer-parallax-active {
+  margin-bottom: unset !important;
+}
+
+body.sqs-edit-mode-active.has-footer-parallax #page,
+body.sqs-edit-mode-active.footer-parallax-active #page {
+  margin-bottom: unset !important;
+}
+
+body.sqs-edit-mode-active.has-footer-parallax #footer-sections,
+body.sqs-edit-mode-active.footer-parallax-active #footer-sections {
+  transform: unset !important;
+  position: static !important;
+}
+
+body:not(.sqs-edit-mode-active).has-footer-parallax #footer-sections,
+body.footer-parallax-active #footer-sections {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+body:not(.sqs-edit-mode-active).has-footer-parallax #page,
+body.footer-parallax-active #page {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+}
+
+body.sqs-edit-mode-active #footer-sections,
+body.sqs-edit-mode-active #page {
+  position: static !important;
+  transform: unset !important;
+  margin-bottom: unset !important;
+}
+
+#page:has(.system-page) {
+  background-color: var(--siteBackgroundColor);
+}
+
+#page:has(.system-page) + #footer-sections .page-section:first-of-type {
+  padding-top: 0 !important;
+}
